@@ -15,10 +15,15 @@ def badCharHeuristic(string, size):
     # Fill the actual value of last occurrence
     for i in range(size):
         badChar[ord(string[i])] = i;
+        print('this is i')
+        print(i)
  
     # return initialized list
+    print("this is badchar")
+    print(badChar)
+
     return badChar
- 
+
 def search(txt, pat):
     '''
     A pattern searching function that uses Bad Character
@@ -36,12 +41,14 @@ def search(txt, pat):
     s = 0
     while(s <= n-m):
         j = m-1
+        print(j)
  
         # Keep reducing index j of pattern while
         # characters of pattern and text are matching
         # at this shift s
         while j>=0 and pat[j] == txt[s+j]:
             j -= 1
+            print(j)
  
         # If the pattern is present at current shift,
         # then index j will become -1 after the above loop
@@ -51,7 +58,7 @@ def search(txt, pat):
             '''   
                 Shift the pattern so that the next character in text
                       aligns with the last occurrence of it in pattern.
-                The condition s+m < n is necessary for the case when
+                The condition    < n is necessary for the case when
                    pattern occurs at the end of text
                '''
             s += (m-badChar[ord(txt[s+m])] if s+m<n else 1)
