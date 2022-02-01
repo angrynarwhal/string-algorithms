@@ -1,5 +1,7 @@
 # Four Russians Algorithm
 
+From: https://github.com/vklyukin/four_russians 
+
 ## Table of contents
 * [Description](#description)
 * [Setup](#setup)
