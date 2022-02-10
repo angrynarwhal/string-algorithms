@@ -2,6 +2,21 @@
 
 From: https://github.com/vklyukin/four_russians 
 
+**Should work now, but these are steps I used to update it"
+```
+10007  python3 -m venv ~/.fourrussians
+10008  source ~/.fourrussians/bin/activate
+10009  pip install -r requirements.txt
+10010  pip install wheel
+10011  pip install -r requirements.txt
+10012  vi requirements.txt
+10013  pip install -r requirements.txt
+10014  git status
+10015  git add requirements.txt
+10016  git commit -m " requirements.txt update"
+10017  git push
+```
+
 ## Table of contents
 * [Description](#description)
 * [Setup](#setup)
