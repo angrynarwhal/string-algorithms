@@ -88,13 +88,13 @@ def hirschberg(x, y, simMatrix, gapPenalty, alphEnum):
         return nw(x, y, simMatrix, gapPenalty, alphEnum)
     else:
         # Make partitions, call subroutines.
-        F, B = forwards(x[:n/2], y, simMatrix, gapPenalty, alphEnum), backwards(x[n/2:], y, simMatrix, gapPenalty, alphEnum)
+        F, B = forwards(x[:n//2], y, simMatrix, gapPenalty, alphEnum), backwards(x[n//2:], y, simMatrix, gapPenalty, alphEnum)
         partition = [F[j] + B[m-j] for j in range(m+1)]
         cut = partition.index(max(partition))
         # Clear all memory now, so that we don't store data during recursive calls.
         F, B, partition = [], [], []
         # Now make recursive calls.
-        callLeft = hirschberg(x[:n/2], y[:cut], simMatrix, gapPenalty, alphEnum)
-        callRight = hirschberg(x[n/2:], y[cut:], simMatrix, gapPenalty, alphEnum)
+        callLeft = hirschberg(x[:n//2], y[:cut], simMatrix, gapPenalty, alphEnum)
+        callRight = hirschberg(x[n//2:], y[cut:], simMatrix, gapPenalty, alphEnum)
         # Now return result in format: [1st alignment, 2nd alignment, similarity]
         return [callLeft[r] + callRight[r] for r in range(3)]
