@@ -25,7 +25,9 @@ These should pass.
 
 **Running Four Russians**
 1. There are test files in the examples subdirectory.
-2. 
+2. `/Users/gogginsS/github/angrynarwhal/stringer/02-module/code/four_russians` experimental
+2. `x`
+
 
 ## Table of contents
 * [Description](#description)
