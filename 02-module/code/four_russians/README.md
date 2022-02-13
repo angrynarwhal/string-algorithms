@@ -9,7 +9,6 @@ From: https://github.com/vklyukin/four_russians
 python3 -m venv ~/.fourrussians
 source ~/.fourrussians/bin/activate
 pip install wheel
-/Users/gogginsS/.fourrussians/bin/python3.9 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
