@@ -75,9 +75,10 @@ for t in range(trials):
     print(f'{table[-1]}')
 
 # Plot the runtime comparisons
-plt.plot(nm_array, nwtime_array, '.')
-plt.plot(nm_array, hbtime_array, 'o')
+plt.plot(nm_array, nwtime_array, '.', label='NW Time')
+plt.plot(nm_array, hbtime_array, 'o', label='Hirschberg Time')
 #plt.legend(handles=[nwtime_array, hbtime_array])
+#plt.legend()
 plt.xlabel('nm')
 plt.ylabel('running time (s)')
 plt.title('Comparison of Needleman-Wunsch and Hirschberg Runtimes')
