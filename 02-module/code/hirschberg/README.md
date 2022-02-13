@@ -2,21 +2,21 @@
 
 ## Setup for running hirschberg
 ```
-python3 -m venv ~/.fourrussians
-source ~/.fourrussians/bin/activate
+python3 -m venv ~/.hirschberg
+source ~/.hirschberg/bin/activate
 pip install wheel
 pip install -r requirements.txt
 ```
 
 **Running Hirschberg**
 
-1. python3 main.py example/medium.json --result_write_path sean
-2. python3 test1_31.py
-3. python3 nw1_3.py
-4. python3 hirschberg1_3.py
-5. python3 time1_31.py
-6. python3 time1_32.py
-
+```
+python3 nw1_3.py
+python3 hirschberg1_3.py
+python3 test1_31.py
+python3 time1_31.py
+python3 time1_32.py
+```
 
 
 
