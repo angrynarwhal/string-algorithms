@@ -25,8 +25,10 @@ These should pass.
 
 **Running Four Russians**
 1. There are test files in the examples subdirectory.
-2. `/Users/gogginsS/github/angrynarwhal/stringer/02-module/code/four_russians` experimental
-2. `x`
+2. `/Users/gogginsS/github/angrynarwhal/stringer/02-module/code/four_russians` -- Local Directory I started in
+3. `python main.py example/medium.json --result_write_path sean`
+4. `python -m pytest four_russians/tests/test_four_russians.py `
+5. `python -m pytest four_russians/tests/test_bool_matrix.py`
 
 
 ## Table of contents
