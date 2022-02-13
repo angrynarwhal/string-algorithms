@@ -43,15 +43,15 @@ while(line):
 
     # Run the Hirschberg algorithm
 
-    print "First sequence:", A
-    print "Second sequence:", B
-    print "Calculating alignment distance by Hirschberg method..."
+    print(f"First sequence: {A}")
+    print(f"Second sequence:  {B}")
+    print(f"Calculating alignment distance by Hirschberg method.{A} and {B}..")
     
     z = hirschberg(A, B, simMatrix, gapPenalty, alphEnum)
 
-    print "Alignment of A: ", z[0]
-    print "Alignment of B: ", z[1]
-    print "Similarity score: ", z[2], '\n'
+    print(f"Alignment of A: {z[0]} ")
+    print(f"Alignment of B: {z[1]} ")
+    print(f"Similarity score: {z[2]} ")
 
     # Write outputs to text file
     g.write(str(z[2]) + "\n")
