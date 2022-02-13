@@ -49,8 +49,8 @@ while(line):
 
     # Run the NW algorithm
 
-    print('First sequence:, {A}')
-    print('Second sequence:, {B}')
+    print(f'First sequence: {A}')
+    print(f'Second sequence: {B}')
     print('Calculating alignment distance by Needleman-Wunsch method...')
     
     z = nw(A, B, simMatrix, gapPenalty, alphEnum)
