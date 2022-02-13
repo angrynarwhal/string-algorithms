@@ -19,6 +19,7 @@ print('Hirschberg: Building a matrix.')
 while(line):
     row = list(int(x) for x in line.split())
     simMatrix.append(row)
+    print(f'sim matrix length is now: {len(simMatrix)}')
     line = f.readline()
 f.close()
 
