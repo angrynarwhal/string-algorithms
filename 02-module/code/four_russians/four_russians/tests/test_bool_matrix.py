@@ -3,8 +3,8 @@ import pytest
 import random
 import numpy as np
 
-from four_russians import BoolMatrix
-
+#from four_russians import BoolMatrix
+from utils.bool_matrix import BoolMatrix
 
 @dataclasses.dataclass()
 class MatrixParameters:

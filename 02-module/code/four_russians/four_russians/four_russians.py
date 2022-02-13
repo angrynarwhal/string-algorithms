@@ -2,8 +2,10 @@ import logging
 import math
 import typing as tp
 
-from .bool_matrix import BoolMatrix
-from .utils import bit_list_to_int
+from utils.bool_matrix import BoolMatrix
+from .matrix_utils import bit_list_to_int 
+from utils import utils 
+# bit_list_to_int
 
 
 logger = logging.getLogger(__name__)

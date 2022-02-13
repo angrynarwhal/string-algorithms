@@ -2,7 +2,7 @@ import click
 import logging
 
 import four_russians as fr
-import utils
+import matrix_utils  
 
 
 logger = logging.getLogger(__name__)
