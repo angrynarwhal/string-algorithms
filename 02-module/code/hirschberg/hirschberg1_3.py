@@ -43,9 +43,9 @@ while(line):
 
     # Run the Hirschberg algorithm
 
-    print(f"First sequence: {A}")
-    print(f"Second sequence: {B}")
-    print("Calculating alignment distance by Hirschberg method...")
+    print(f'First sequence: {A}')
+    print(f'Second sequence: {B}')
+    print('Calculating alignment distance by Hirschberg method...')
     
     z = hirschberg(A, B, simMatrix, gapPenalty, alphEnum)
 

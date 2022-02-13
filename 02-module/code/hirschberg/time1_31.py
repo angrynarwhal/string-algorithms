@@ -45,18 +45,27 @@ for t in range(trials):
         B += random.choice(alphabet)
 
     # Time the nw routine   
-    t0 = time.clock()
+    t0 = time.process_time()
+    #print(f'NW Start: {t0}')
     for k in range(repeats):
         nwout = nw(A, B, simMatrix, gapPenalty, alphEnum)
-    t1 = time.clock()
+    t1 = time.process_time()
+    #print(f'NW Stop: {t1}')
     nwtime = (t1 - t0)/repeats
+    print(f'NW Total Time: {nwtime}')
 
     # Time the hirschberg routine
-    t0 = time.clock()
+    t0 = time.process_time()
+    #print(f'Hirschberg Start: {t0}')
     for k in range(repeats):
         hbout = hirschberg(A, B, simMatrix, gapPenalty, alphEnum)
-    t1 = time.clock()
+    t1 = time.process_time()
+    #print(f'Hirschberg Stop: {t1}')
     hbtime = (t1 - t0)/repeats
+    print(f'Hirschberg Time: {hbtime}')
+    print('===========================')
 
     table.append([n, m, n*m, nwtime, hbtime])
-    print table[-1]
+    #print(f'table[-1]')
+
+print(f'Full Table: {table}')

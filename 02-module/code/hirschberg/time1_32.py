@@ -2,6 +2,7 @@ import random
 import time
 import numpy
 import pylab
+import matplotlib.pyplot as plt
 
 # import our algorithms for testing
 from functions1_3 import nw
@@ -50,32 +51,35 @@ for t in range(trials):
         B += random.choice(alphabet)
 
     # Time the nw routine   
-    t0 = time.clock()
+    t0 = time.process_time()
     for k in range(repeats):
         nwout = nw(A, B, simMatrix, gapPenalty, alphEnum)
-    t1 = time.clock()
+    t1 = time.process_time()
     nwtime = (t1 - t0)/repeats
+    print(f'NWTIME: {nwtime}')
 
     # Time the hirschberg routine
-    t0 = time.clock()
+    t0 = time.process_time()
     for k in range(repeats):
         hbout = hirschberg(A, B, simMatrix, gapPenalty, alphEnum)
-    t1 = time.clock()
+    t1 = time.process_time()
     hbtime = (t1 - t0)/repeats
+    print(f'Hirschberg Time: {hbtime}')
+    print('=============================')
 
     table.append([n, m, n*m, nwtime, hbtime])
     nm_array.append(n*m)
     nwtime_array.append(nwtime)
     hbtime_array.append(hbtime)
     
-    print table[-1]
+    print(f'{table[-1]}')
 
 # Plot the runtime comparisons
-pylab.plot(nm_array, nwtime_array, '.')
-pylab.plot(nm_array, hbtime_array, 'o')
-pylab.legend(('N-W', 'Hirschberg'), 2)
-pylab.xlabel('nm')
-pylab.ylabel('running time (s)')
-pylab.title('Comparison of Needleman-Wunsch and Hirschberg Runtimes')
-pylab.savefig('running_times')
-pylab.show()
+plt.plot(nm_array, nwtime_array, '.')
+plt.plot(nm_array, hbtime_array, 'o')
+plt.legend('N-W', 'Hirschberg')
+plt.xlabel('nm')
+plt.ylabel('running time (s)')
+plt.title('Comparison of Needleman-Wunsch and Hirschberg Runtimes')
+plt.savefig('running_times')
+plt.show()

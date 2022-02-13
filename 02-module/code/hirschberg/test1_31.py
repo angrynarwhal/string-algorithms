@@ -85,7 +85,7 @@ random.seed()
 # Number of trials
 trials = 1000
 
-print "Testing..."
+print("Testing...")
 
 for t in range(trials):
     fail = False
@@ -145,20 +145,24 @@ for t in range(trials):
         g.write(parent + '\n')
         g.write(child + "\n\n")
         g.close()
-        print "Verification error - see text file"
+        print("Verification error - see text file")
         break
 
     #Bounds test
-    if nwout[2] != hbout[2] or nwout[2] < work or hbout < work:
+    print(f'nwout2: {nwout[2]}')
+    print(f'hbout2: {hbout[2]}')
+    print(f'work: {work}')
+    print(f'hbout: {hbout}')
+    if nwout[2] != hbout[2] or nwout[2] < work or hbout[2] < work:
         g = open("errorlist.txt", 'w')
         g.write("FAIL - Bounds\n")
         g.write(parent + '\n')
         g.write(child + "\n\n")
         g.close()
-        print "Bounds error - see text file"
+        print("Bounds error - see text file")
         break
 else:
     g = open("errorlist.txt", 'w')
     g.write("No errors detected")
     g.close()
-    print "Done, no errors detected"
+    print("Done, no errors detected")   
