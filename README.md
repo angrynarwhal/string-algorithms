@@ -4,8 +4,8 @@ Repository for CS 4060: String Algorithms
 ## Module Cadence:
 For each module: 
  - Tuesday 1: Review and discussion of the theoretical and applied utility of the algorithms covered
- - Thursday 1: Seminar like discussion and clarification of algorithms from the reading. 
- - Tuesday 2: Working through example algorithms (code/applied)
+ - Thursday 1: Working through example algorithms (code/applied)
+ - Tuesday 2: Seminar like discussion and clarification of algorithms from the reading. 
  - Thursday 2: Peer review of assignments (relating to algorithms). Expected to be prepared with questions, confusion, and candor about difficulties. 
  - Saturday 2: Assignment due at 11:59pm
  
