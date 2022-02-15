@@ -2,20 +2,33 @@
 
 From: https://github.com/vklyukin/four_russians 
 
-**Should work now, but these are steps I used to update it"
+**Setup**
+1. The Four Russians algorithm in https://github.com/angrynarwhal/string_algorithms/02-module/code/four_russians has a subdirectory for `four_russians` under the first `four_russians` directory. The double nesting is to keep the four_russians example and python3 cache files out of the main code directory. An attemp at tidyness in the context of the course. 
+2. If you clone from the source, everything is in Python presently, but I am optimistic the developer will accept my pull request to update it to Python3. In that case, you do not need to worry about the double nesting. 
 ```
-10007  python3 -m venv ~/.fourrussians
-10008  source ~/.fourrussians/bin/activate
-10009  pip install -r requirements.txt
-10010  pip install wheel
-10011  pip install -r requirements.txt
-10012  vi requirements.txt
-10013  pip install -r requirements.txt
-10014  git status
-10015  git add requirements.txt
-10016  git commit -m " requirements.txt update"
-10017  git push
+python3 -m venv ~/.fourrussians
+source ~/.fourrussians/bin/activate
+pip install wheel
+pip install -r requirements.txt
+
 ```
+
+**Running Tests**
+First, make sure you are in the root directory for four_russians, which is *actually* `four_russians/four_russians` and have activated your virtual environment as noted above. `source ~/.fourrussians/bin/activate`. 
+
+```
+cd <course home>/02-module/code/four_russians
+python -m pytest four_russians/tests/test_four_russians.py
+python -m pytest four_russians/tests/test_bool_matrix.py
+```
+
+These should pass. 
+
+**Running Four Russians**
+1. There are test files in the examples subdirectory.
+2. `/Users/gogginsS/github/angrynarwhal/stringer/02-module/code/four_russians` -- Local Directory I started in
+3. `python main.py example/medium.json --result_write_path sean`
+
 
 ## Table of contents
 * [Description](#description)
