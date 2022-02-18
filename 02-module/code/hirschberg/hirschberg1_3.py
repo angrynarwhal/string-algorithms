@@ -4,70 +4,56 @@ from functions1_3 import backwards
 from functions1_3 import hirschberg
 
 # Read alphabet and scores from text file
-print('Hirschberg: Reading alphabet scores from the text files scores.txt')
-f = open("scores.txt", 'r')
-alphabet = f.readline()
-while(alphabet[-1] in ['\n', '\r']):
-    alphabet = alphabet[:-1]
-f.readline()
-gapPenalty = int(f.readline())
-print(f'Hirschberg: This lines gap penalty is: {gapPenalty}')
-f.readline()
-simMatrix = []
-line = f.readline()
-print('Hirschberg: Building a matrix.')
-while(line):
-    row = list(int(x) for x in line.split())
+with open("scores.txt", 'r') as f:
+    scores_content = f.read().split('\n')
+    scores_content = [line for line in scores_content if len(line) > 0]
+
+alphabet = scores_content[0]
+gapPenalty = int(scores_content[1])
+simMatrix = list()
+
+for line in scores_content[2:]:
+    row = [int(x) for x in line.split()]
     simMatrix.append(row)
-    print(f'sim matrix length is now: {len(simMatrix)}')
-    line = f.readline()
-f.close()
 
 # Create a 1-1 mapping from characters to integers, for simplicity in algorithm
-print(f'Hirschberg: Creating a 1-1 mapping from characters to integers, for simplicity in algorithm')
-alphEnum = dict([(alphabet[i], i) for i in range(len(alphabet))])
+alphEnum = {alphabet[i]: i for i in range(len(alphabet))}
 
 # Load input sequences
-print('Hirschberg: Loading input sequences.')
-f = open("sequences.txt", 'r')
-line = f.readline()
+with open("sequences.txt", 'r') as f:
+    sequences_content = f.read().split('\n')
+    sequences_content = [line for line in sequences_content if len(line) > 0]
 
-# Open output file, in preparation for storing output alignments
-print('Opening output file alignments.txt in preparation for storing output alignments.')
-g = open("alignments.txt", 'w')
+results = list()
 
-
-print('OK. Hirschberg: This loop repeats until no more input sequences are found At each iteration we read the next two sequences and run the algorithm on them')
-while(line):
+for i in range(0, len(sequences_content), 2):
     # This loop repeats until no more input sequences are found
     # At each iteration we read the next two sequences and run the algorithm on them
-    A = line
-    while(A[-1] in ['\n', '\r']):
-        A = A[:-1]
-    B = f.readline()
-    while(B[-1] in ['\n', '\r']):
-        B = B[:-1]
-    f.readline()
-    line = f.readline()
+    try:
+        line1 = sequences_content[i]
+        line2 = sequences_content[i+1]
+    except IndexError:
+        break
 
     # Run the Hirschberg algorithm
-
-    print(f'First sequence: {A}')
-    print(f'Second sequence: {B}')
-    print('Calculating alignment distance by Hirschberg method...')
+    print(f"First sequence: {line1}")
+    print(f"Second sequence: {line2}")
     
-    z = hirschberg(A, B, simMatrix, gapPenalty, alphEnum)
+    z = hirschberg(line1, line2, simMatrix, gapPenalty, alphEnum)
 
-    print(f"Alignment of A: {z[0]} \n ")  
-    print(f"Alignment of B: {z[1]} \n ")
-    print(f"Similarity score: {z[2]} \n ")
+    print(f"Alignment of A: {z[0]}") 
+    print(f"Alignment of B: {z[1]})")
+    print(f"Similarity score: {z[2]}\n")
 
-    # Write outputs to text file
-    g.write(str(z[2]) + "\n")
-    g.write(z[0] + "\n")
-    g.write(z[1] + "\n")
-    g.write("\n")
+    # Store contents
+    results.append(str(z[2]))
+    results.append(z[0])
+    results.append(z[1]) 
+    results.append('')
 
-# Close the files and finish
-f.close()
-g.close()
+# add newlines
+results = [f"{element}\n" for element in results]
+
+# Write to output file
+with open("alignments.txt", 'w') as g:
+    g.writelines(results)
