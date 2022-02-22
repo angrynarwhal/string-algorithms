@@ -1,6 +1,8 @@
 # string-algorithms
 Repository for CS 4060: String Algorithms
 
+**You need to install [git-lfs](https://git-lfs.github.com/) for this repository**
+
 ## Module Cadence:
 For each module: 
  - Tuesday 1: Review and discussion of the theoretical and applied utility of the algorithms covered
