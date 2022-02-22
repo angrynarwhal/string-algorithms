@@ -107,14 +107,16 @@ def printArr(arr, n):
     print()
  
 # Driver code
-if __name__ == "__main__":
-     
-    txt = "apple"
+# Driver program to test above function
+def main():
+    txt = input("String to Search: ")
     n = len(txt)
-     
     suffixArr = buildSuffixArray(txt, n)
      
     print("Following is suffix array for", txt)
      
     printArr(suffixArr, n)
  
+
+if __name__ == '__main__':
+    main()
