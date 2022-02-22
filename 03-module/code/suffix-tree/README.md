@@ -2,6 +2,8 @@
 
 This module is an optimized implementation of Ukkonen's suffix tree algorithm in python which **will** be having most of the important text processing functionalities such as:
 
+**Try running `suffixtree-constitution.py`. What results do you get?** 
+
 
 ### Search for strings:
   `✓` Check if a string ***P*** of length ***m*** is a substring in ***O(m)*** time.  
