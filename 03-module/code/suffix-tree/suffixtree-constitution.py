@@ -198,14 +198,17 @@ class SuffixTree:
 
     def build_suffix_tree(self):
         self.size = len(self._string)
+        if self.size==0: 
+            print('zero length')
+        else: 
 
-        """Root is a special node with start and end indices as -1,
-        as it has no parent from where an edge comes to root"""
-        self.rootEnd = -1
-        self.root = self.new_node(-1, self.rootEnd)
-        self.activeNode = self.root  # First activeNode will be root
-        for i in range(self.size):
-            self.extend_suffix_tree(i)
+            """Root is a special node with start and end indices as -1,
+            as it has no parent from where an edge comes to root"""
+            self.rootEnd = -1
+            self.root = self.new_node(-1, self.rootEnd)
+            self.activeNode = self.root  # First activeNode will be root
+            for i in range(self.size):
+                self.extend_suffix_tree(i)
 
     def __str__(self):
         return "\n".join(map(str, self.edges.values()))
@@ -224,6 +227,9 @@ def main():
     #for line in text: 
 
 # Using readlines()
+# Highlight where the suffix was found
+# Display the tree
+# Show a count of how many instances of the suffix are in each line. 
 
     Lines = f.readlines()
  
@@ -234,11 +240,17 @@ def main():
         print("Line{}: {}".format(count, line.strip()))
 
         s = pattern 
-        tree = SuffixTree(s)
+        tree = SuffixTree(str(f))
         tree.build_suffix_tree()
         a = CheckSubString(tree, s, findall=True)
         print(a.check())
- 
+"""
+s = "abcabxabcd$"
+tree = SuffixTree(s)
+tree.build_suffix_tree()
+a = CheckSubString(tree, 'abx', findall=True)
+print(a.check())
+"""
  
 if __name__ == '__main__':
     main()
