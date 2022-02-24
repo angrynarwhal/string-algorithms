@@ -117,6 +117,5 @@ def main():
      
     printArr(suffixArr, n)
  
-
 if __name__ == '__main__':
     main()
