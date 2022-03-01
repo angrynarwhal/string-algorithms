@@ -1,0 +1,2 @@
+# Homework Three
+1. Reviewing the code samples from this unit, develop an application of string algorithms using suffix trees, or suffix arrays, that identifies patterns in a text array of your selection. You may use the constitution, or the bioinformatics arrays from previous units. 
